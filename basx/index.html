@@ -106,24 +106,27 @@
     h2 { margin-bottom: .8rem; font-size: clamp(2rem, 4vw, 3.35rem); letter-spacing: -.055em; line-height: 1.05; }
     .section-heading p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; }
     .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .capability { min-height: 230px; padding: 1.45rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); transition: transform .2s ease, box-shadow .2s ease; }
+    .capability { min-height: 205px; padding: 1.45rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); transition: transform .2s ease, box-shadow .2s ease; }
     .capability:hover { transform: translateY(-5px); box-shadow: 0 18px 32px rgba(24,56,61,.09); }
-    .icon { width: 43px; height: 43px; display: grid; place-items: center; margin-bottom: 2.2rem; border-radius: 13px; background: var(--mint); color: #2c6950; }
+    .icon { width: 43px; height: 43px; flex: 0 0 43px; display: grid; place-items: center; border-radius: 13px; background: var(--mint); color: #2c6950; }
+    .capability-top { display: flex; align-items: center; gap: .85rem; margin-bottom: .85rem; }
+    .capability-top h3 { margin: 0; }
     .capability-icon { display: block; width: 29px; height: 29px; }
-    .capability:nth-child(1) .icon { background: #d9f2df; color: #286348; }
-    .capability:nth-child(2) .icon { background: #fff0e3; color: #aa5629; }
+    .capability:nth-child(1) .icon { background: #fff0e3; color: #aa5629; }
+    .capability:nth-child(2) .icon { background: #d9f2df; color: #286348; }
     .capability:nth-child(3) .icon { background: #eeeaff; color: #6252a3; }
     .capability:nth-child(4) .icon { background: #e3f1ff; color: #376c9a; }
     .capability:nth-child(5) .icon { background: #fff5c9; color: #8b6b12; }
-    .capability:nth-child(6) .icon { background: #ffe4df; color: #a84e43; }
+    .capability:nth-child(6) .icon { background: #e8efd5; color: #61722d; }
     .capability:nth-child(7) .icon { background: #f4e5fa; color: #7d4d91; }
     .capability:nth-child(8) .icon { background: #dff5f3; color: #24736c; }
     .capability:nth-child(9) .icon { background: #fbe3ed; color: #98516f; }
-    .capability:nth-child(10) .icon { background: #e8efd5; color: #61722d; }
+    .capability:nth-child(10) .icon { background: #ffe4df; color: #a84e43; }
     .capability:nth-child(11) .icon { background: #ffe9d4; color: #986137; }
     .capability:nth-child(12) .icon { background: #e5edf0; color: #45656f; }
     h3 { margin-bottom: .55rem; font-size: 1.1rem; letter-spacing: -.025em; }
     .capability p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+    .example-link { display: inline-block; margin-top: .8rem; color: #2c6950; font-size: .85rem; font-weight: 750; text-underline-offset: .22em; white-space: nowrap; }
 
     .pictures { padding: 56px 0 70px; background: var(--paper); }
     .picture-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 1.5rem; align-items: start; margin-bottom: 1.4rem; }
@@ -136,7 +139,8 @@
     .roadmap-card p { margin: 0; color: #704c39; font-size: .86rem; }
     .roadmap-card .roadmap-subheading { margin-top: .9rem; padding-top: .8rem; border-top: 1px solid #ecd9cb; }
     .visual-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; }
-    .visual-card { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: var(--white); }
+    .visual-card { margin: 0; overflow: hidden; scroll-margin-top: 1rem; border: 1px solid var(--line); border-radius: 15px; background: var(--white); }
+    .visual-card:target { outline: 3px solid #80b44b; outline-offset: 3px; }
     .visual-card > a { display: block; overflow: hidden; background: #e8ece9; }
     .visual-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .35s ease; }
     .visual-card img.contain { object-fit: contain; background: #edf0eb; }
@@ -220,7 +224,7 @@
     }
     @media (max-width: 520px) {
       .wrap { width: min(100% - 28px, 1160px); }.nav-cta { font-size: .82rem; }.brand { font-size: 1.1rem; }
-      h1 { font-size: 2.8rem; }.capability-grid, .visual-grid { grid-template-columns: 1fr; }.capability { min-height: 0; }.icon { margin-bottom: 1.3rem; }
+      h1 { font-size: 2.8rem; }.capability-grid, .visual-grid { grid-template-columns: 1fr; }.capability { min-height: 0; }
       section { padding: 62px 0; }.contact { padding-top: 62px; }.contact-box { padding: 1.7rem; }.footer-row { flex-direction: column; }
     }
   </style>
@@ -283,18 +287,18 @@
           <p>BASx arbetar direkt med DUC:en. Funktionerna nedan är på plats, används i praktiskt ingenjörsarbete och skapar värde även i avancerade uppgifter.</p>
         </div>
         <div class="capability-grid">
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-01.png" alt=""></div><h3>Direkt mot BAS2 och BAS3</h3><p>Arbetar direkt mot BAS2- och BAS3-DUC:er via TCP, USB eller HTTP — med samma agentiska arbetssätt oavsett anslutning.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-02.png" alt=""></div><h3>Programmera från funktion</h3><p>Översätter en funktionsbeskrivning till I/O, objekt och PLC-logik — steg för steg och granskningsbart.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-03.png" alt=""></div><h3>Konfigurera all I/O från en plintlista</h3><p>Läser plintlistan, mappar signalerna och konfigurerar automatiskt anläggningens I/O med rätt kanaler, signalnamn, typer och skalning.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-04.png" alt=""></div><h3>Förstå befintliga anläggningar</h3><p>Hämtar information ur DUC:en och producerar en funktionsbeskrivning av det som redan finns.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-05.png" alt=""></div><h3>Justera med precision</h3><p>Identifierar rätt objekt och parametrar, förklarar konsekvensen och genomför godkända ändringar med precision.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-06.png" alt=""></div><h3>Analysera problem</h3><p>Analyserar anläggningsvärden och loggar, hittar mönster och presenterar välgrundade orsaker och åtgärder.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-07.png" alt=""></div><h3>Arbeta med bilder</h3><p>Ritar processbilder från grunden eller efter exempel, granskar befintliga bilder och hittar fel och förbättringsmöjligheter.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-08.png" alt=""></div><h3>Konfigurera Modbus</h3><p>Tolkar underlag och bygger Modbus-konfigurationer mot aggregat, med noggrann kontroll av register och skalning.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-09.png" alt=""></div><h3>Jämför och kopiera mellan anläggningar</h3><p>Jämför funktionalitet mellan anläggningar och kopierar aggregat med funktion, objekt och bild som utgångspunkt.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-10.png" alt=""></div><h3>Följ upp åtgärder</h3><p>Går igenom loggar, tar fram åtgärder och dokumenterar vad som ska kontrolleras efteråt.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-11.png" alt=""></div><h3>Prata som du vill</h3><p>Beskriv problemet på svenska, engelska eller ett annat språk. Det viktiga är att dialogen blir begriplig för dig.</p></article>
-          <article class="capability"><div class="icon"><img class="capability-icon" src="assets/icons/capability-12.png" alt=""></div><h3>Planera genomtänkta loggar</h3><p>Analysera behovet och lägg upp loggar med hänsyn till tillgängligt utrymme, provtagningsintervall och anläggningens funktion.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-02.png" alt=""></div><h3>Programmera från funktion</h3></div><p>Översätter en funktionsbeskrivning till I/O, objekt och PLC-logik — steg för steg och granskningsbart.</p><a class="example-link" href="#exempel-plc">Visa exempel</a></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-01.png" alt=""></div><h3>Direkt mot BAS2 och BAS3</h3></div><p>Arbetar direkt mot BAS2- och BAS3-DUC:er via TCP, USB eller HTTP — med samma agentiska arbetssätt oavsett anslutning.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-03.png" alt=""></div><h3>Konfigurera all I/O från en plintlista</h3></div><p>Läser plintlistan, mappar signalerna och konfigurerar automatiskt anläggningens I/O med rätt kanaler, signalnamn, typer och skalning.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-04.png" alt=""></div><h3>Förstå befintliga anläggningar</h3></div><p>Hämtar information ur DUC:en och producerar en funktionsbeskrivning av det som redan finns.</p><a class="example-link" href="#exempel-funktionsbeskrivning">Visa exempel</a></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-05.png" alt=""></div><h3>Justera med precision</h3></div><p>Identifierar rätt objekt och parametrar, förklarar konsekvensen och genomför godkända ändringar med precision.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-10.png" alt=""></div><h3>Följ upp åtgärder</h3></div><p>Går igenom loggar, tar fram åtgärder och dokumenterar vad som ska kontrolleras efteråt.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-07.png" alt=""></div><h3>Arbeta med bilder</h3></div><p>Ritar processbilder från grunden eller efter exempel, granskar befintliga bilder och hittar fel och förbättringsmöjligheter.</p><a class="example-link" href="#exempel-bild">Visa exempel</a></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-08.png" alt=""></div><h3>Konfigurera Modbus</h3></div><p>Tolkar underlag och bygger Modbus-konfigurationer mot aggregat, med noggrann kontroll av register och skalning.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-09.png" alt=""></div><h3>Jämför och kopiera mellan anläggningar</h3></div><p>Jämför funktionalitet mellan anläggningar och kopierar aggregat med funktion, objekt och bild som utgångspunkt.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-06.png" alt=""></div><h3>Analysera problem</h3></div><p>Analyserar anläggningsvärden och loggar, hittar mönster och presenterar välgrundade orsaker och åtgärder.</p><a class="example-link" href="#exempel-granskning">Visa exempel</a></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-11.png" alt=""></div><h3>Prata som du vill</h3></div><p>Beskriv problemet på svenska, engelska eller ett annat språk. Det viktiga är att dialogen blir begriplig för dig.</p></article>
+          <article class="capability"><div class="capability-top"><div class="icon"><img class="capability-icon" src="assets/icons/capability-12.png" alt=""></div><h3>Planera genomtänkta loggar</h3></div><p>Analysera behovet och lägg upp loggar med hänsyn till tillgängligt utrymme, provtagningsintervall och anläggningens funktion.</p></article>
         </div>
       </div>
     </section>
@@ -349,21 +353,21 @@
         </div>
 
         <div class="visual-grid">
-          <figure class="visual-card">
+          <figure class="visual-card" id="exempel-granskning">
+            <a href="granskning.pdf" target="_blank" rel="noopener noreferrer"><img class="contain" src="assets/granskning.png" loading="lazy" alt="Utdrag ur Teknisk DUC-granskning av Björkskjulet"></a>
+            <figcaption><strong>Exempel på DUC-granskning</strong><span>Du väljer målgrupp och utformning. Den här rapporten är för tekniker. <a href="granskning.pdf" target="_blank" rel="noopener noreferrer">Läs rapporten (PDF)</a>.</span></figcaption>
+          </figure>
+          <figure class="visual-card" id="exempel-plc">
             <a href="assets/plc.png" target="_blank" rel="noopener"><img class="contain" src="assets/plc.png" loading="lazy" alt="PLC-program som BASx självständigt har arbetat fram"></a>
             <figcaption><strong>Verkligt PLC-arbete</strong><span>PLC-funktion som BASx självständigt har byggt och dokumenterat.</span></figcaption>
           </figure>
-          <figure class="visual-card">
+          <figure class="visual-card" id="exempel-funktionsbeskrivning">
             <a href="assets/funktionsbeskrivning.png" target="_blank" rel="noopener"><img class="contain" src="assets/funktionsbeskrivning.png" loading="lazy" alt="Funktionsbeskrivning som BASx självständigt har tagit fram"></a>
             <figcaption><strong>Verklig funktionsbeskrivning</strong><span>Funktionsbeskrivning som BASx självständigt har tagit fram från den befintliga anläggningen.</span></figcaption>
           </figure>
-          <figure class="visual-card">
-            <a href="assets/modern.png" target="_blank" rel="noopener"><img src="assets/modern.png" loading="lazy" alt="Modern funktionsbild för ventilationssystemet 5701 FTX"></a>
-            <figcaption><strong>Från tom yta · modern</strong><span>Skapad helt från grunden av BASx. Ännu inte perfekt, men redan en tydlig och användbar modern processbild.</span></figcaption>
-          </figure>
-          <figure class="visual-card">
-            <a href="assets/classic.png" target="_blank" rel="noopener"><img src="assets/classic.png" loading="lazy" alt="Klassisk BASTEC-inspirerad manöverbild för ventilationssystemet 5701 FTX"></a>
-            <figcaption><strong>Från tom yta · klassisk</strong><span>Skapad helt från grunden av BASx. Ännu inte perfekt, men redan ett användbart resultat i klassisk BASTEC-layout.</span></figcaption>
+          <figure class="visual-card" id="exempel-bild">
+            <a href="assets/bild.png" target="_blank" rel="noopener"><img class="contain" src="assets/bild.png" loading="lazy" alt="Manöverbild för värmesystem, radiator och tappvarmvatten som BASx självständigt har ritat och kopplat."></a>
+            <figcaption><strong>Verklig manöverbild</strong><span>Manöverbild för värmesystem 5600 med hetvatten, radiator och tappvarmvatten.</span></figcaption>
           </figure>
         </div>
       </div>
@@ -456,7 +460,7 @@
         <div>
           <p class="eyebrow">Stängd alpha</p>
           <h2>Nyfiken på att prova BASx i din miljö?</h2>
-          <p>Kontakta DS prototyp för att diskutera förutsättningar, testupplägg och tillgång. Mjukvaran är licensbelagd.</p>
+          <p>Kontakta DS prototyp för att diskutera förutsättningar, testupplägg och tillgång.</p>
         </div>
         <div class="contact-links">
           <a href="tel:+46733420400">0733&nbsp;420&nbsp;400</a>
@@ -467,7 +471,7 @@
   </main>
 
   <footer>
-    <div class="wrap footer-row"><span>© DS prototyp · BASx</span><span>Stängd alpha · Licensbelagd mjukvara</span></div>
+    <div class="wrap footer-row"><span>© DS prototyp · BASx</span><span>Stängd alpha · Licensbelagd</span></div>
   </footer>
 </body>
 </html>
