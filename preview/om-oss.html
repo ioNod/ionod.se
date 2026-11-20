@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <link rel="icon" type="image/jpeg" href="assets/ionod-logo.jpg">
+  <meta name="description" content="Davey och Daniel står bakom IoNod. Webbplatsen är byggd av praktikanten Emilia.">
+  <title>Om oss — IoNod</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+  <header class="page-header">
+    <div class="site-header wrap">
+      <a class="logo" href="index.html" aria-label="IoNod, till startsidan"><img src="assets/ionod-logo.jpg" alt="IoNod" width="200" height="200"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span data-menu-label>Meny</span><span data-menu-icon aria-hidden="true">☰</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <a href="index.html">Startsida</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="vattenpumpning.html">Borrad brunn</a>
+        <a href="om-oss.html" aria-current="page">Om oss</a>
+        <a href="faq.html">Frågor &amp; svar</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a class="button button-small button-green nav-cta" href="demo.html"><span class="nav-cta-label">Prova <small>en av våra appar</small></span><span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="innehall">
+    <section class="team-section team-first" aria-labelledby="team-title">
+      <div class="wrap">
+        <nav class="breadcrumb" aria-label="Du är här"><a href="index.html">Startsida</a><span aria-hidden="true">/</span><span aria-current="page">Om oss</span></nav>
+        <div class="team-intro-heading"><h1 id="team-title">Vi är <span class="muted-green">IoNod.</span></h1><p>Ett litet team med över 50 års kollektiv erfarenhet och fokus på integration, styrning och lösningar som fungerar i verklig drift.</p></div>
+        <div class="team-grid">
+          <article class="team-card" tabindex="0">
+            <div class="team-portrait"><img src="assets/team-davey.jpg" alt="Porträtt av Davey med hög hatt och grönrutig skjorta." width="1254" height="1254" fetchpriority="high"></div>
+            <div class="team-body"><h2>Davey</h2><p>Utvecklare</p><p class="team-contribution">Bygger och administrerar system.</p></div>
+          </article>
+          <article class="team-card" data-propeller-card tabindex="0">
+            <div class="team-portrait daniel-portrait"><img src="assets/team-daniel.jpg" alt="Porträtt av Daniel med propellerhatt." width="1254" height="1254"><svg class="daniel-propeller" viewBox="0 0 520 130" aria-hidden="true"><g class="propeller-blades"><path d="M260 65C193 44 110 15 57 25C12 34 6 72 43 88C91 108 171 87 260 65Z" fill="#efb216"/><path d="M260 65C327 44 410 15 463 25C508 34 514 72 477 88C429 108 349 87 260 65Z" fill="#f1b91c"/></g><circle cx="260" cy="65" r="29" fill="#f7e2c1"/></svg></div>
+            <div class="team-body"><div class="team-name-row"><h2>Daniel</h2><button class="propeller-play" type="button" data-spin-propeller aria-label="Snurra Daniels propeller" title="Snurra propellern"><span aria-hidden="true">↻</span></button></div><p>Support och kundkontakt</p><p class="team-contribution">Installation på plats.</p></div>
+          </article>
+          <article class="team-card" id="emilia" tabindex="0">
+            <div class="team-portrait">
+              <img src="assets/team-emilia-utan-lightstick.jpg" alt="Porträtt av Emilia med keps och blå hoodie." width="1254" height="1254">
+            </div>
+            <div class="team-body"><h2>Emilia</h2><p>Praktikant</p><p class="team-contribution">Har byggt webbplatsen.</p></div>
+          </article>
+        </div>
+        
+      </div>
+    </section>
+    <aside class="rabbit-note about-rabbit-note wrap" aria-label="Tips från IoNod">
+      <button class="rabbit-note-mascot" type="button" aria-label="Hälsa på kaninen">
+        <img class="rabbit-body" src="assets/rabbit-mascot.png" alt="" width="512" height="512" loading="lazy">
+        <img class="rabbit-ear rabbit-ear-left" src="assets/rabbit-mascot.png" alt="" aria-hidden="true" width="512" height="512" loading="lazy">
+        <img class="rabbit-ear rabbit-ear-right" src="assets/rabbit-mascot.png" alt="" aria-hidden="true" width="512" height="512" loading="lazy">
+        <span class="rabbit-eye rabbit-eye-left" aria-hidden="true"></span><span class="rabbit-eye rabbit-eye-right" aria-hidden="true"></span>
+      </button>
+      <p class="rabbit-speech">Och jag är Ninis!</p>
+      <div class="rabbit-note-box"><div><h2>Kontakt</h2></div><a class="button button-green" href="mailto:hello@ionod.se">hello@ionod.se <span aria-hidden="true">→</span></a></div>
+    </aside>
+  </main>
+  <footer class="site-footer footer-project wrap" id="sidfot">
+    <div class="footer-identity">
+      <a class="logo" href="index.html" aria-label="ioNod, startsida"><img src="assets/ionod-logo.jpg" alt="ioNod" width="200" height="200"></a>
+      <p>ioNod</p>
+    </div>
+    <p class="footer-project-note">Webbplatsen är ett projekt utvecklat i samband med praktik. <a href="om-oss.html">Läs mer om oss</a>.</p>
+  </footer>
+</body>
+</html>

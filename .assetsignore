@@ -9,6 +9,7 @@ node_modules/
 .assetsignore
 wrangler.jsonc
 wrangler.toml
+preview/generate-demo-frame.py
 
 # Local visual-review and archived output
 ionod-check*.png

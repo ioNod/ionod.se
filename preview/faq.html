@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <link rel="icon" type="image/jpeg" href="assets/ionod-logo.jpg">
+  <meta name="description" content="Svar på frågor om IoNod, pumpstyrning, installation, BASx och priser.">
+  <title>Frågor och svar — IoNod</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+  <header class="page-header">
+    <div class="site-header wrap">
+      <a class="logo" href="index.html" aria-label="IoNod, till startsidan"><img src="assets/ionod-logo.jpg" alt="IoNod" width="200" height="200"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span data-menu-label>Meny</span><span data-menu-icon aria-hidden="true">☰</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <a href="index.html">Startsida</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="vattenpumpning.html">Borrad brunn</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="faq.html" aria-current="page">Frågor &amp; svar</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a class="button button-small button-green nav-cta" href="demo.html"><span class="nav-cta-label">Prova <small>en av våra appar</small></span><span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="innehall">
+    <section class="wrap questions-hero" aria-labelledby="questions-title">
+      <div><nav class="breadcrumb" aria-label="Du är här"><a href="index.html">Startsida</a><span aria-hidden="true">/</span><span aria-current="page">Frågor &amp; svar</span></nav><h1 id="questions-title">Frågor och <span class="muted-green">svar.</span></h1><nav class="question-jumps" aria-label="Frågeområden"><a href="#borja">IoNod och demon</a><a href="#produkterna">Produkter</a><a href="#hjalp">Pris</a></nav></div>
+      <figure class="questions-art"><span class="question-orbit" aria-hidden="true"></span><img class="questions-main-photo" src="assets/illustration-teknik-planering.jpg" alt="En kalender, en surfplatta och en byggnad som symboliserar planering och övervakning." width="1536" height="1024"><img class="questions-detail-photo" src="assets/faq-detalj-akvarell.jpg" alt="Ett frågekort, ett förstoringsglas och en dokumentmapp." width="1536" height="1024"></figure>
+    </section>
+    <div class="wrap questions-content">
+      <!-- Ändra eller lägg till frågor genom att kopiera ett details-block. Frågan står i summary och svaret i p. -->
+      <section class="question-group" id="borja" aria-labelledby="borja-title"><h2 id="borja-title">Om IoNod och demon</h2>
+        <details name="ionod-faq"><summary>Vad gör IoNod?</summary><p>IoNod utvecklar fysiska noder och system för styrning, bokning och larm.</p></details>
+        <details name="ionod-faq"><summary>Behöver jag ett konto för att prova appdemon?</summary><p>Nej, du kan <a href="demo.html">prova IoNod Pump</a> utan att logga in.</p></details>
+        <details name="ionod-faq"><summary>Påverkar demon en riktig pump?</summary><p>Nej. Alla värden och ändringar är simulerade.</p></details>
+      </section>
+      <section class="question-group" id="produkterna" aria-labelledby="produkterna-title"><h2 id="produkterna-title">Vilken lösning passar?</h2>
+        
+        <details name="ionod-faq"><summary>Kan jag använda IoNod med min befintliga pump?</summary><p>Det beror på pump, givare och uppkoppling. <a href="kontakt.html">Kontakta oss</a> för att kontrollera vad som fungerar i din anläggning.</p></details>
+        <details name="ionod-faq"><summary>Vem hjälper till med installationen?</summary><p>En installatör kontrollerar anläggningen och ansluter IoNod där utrustningen är kompatibel.</p></details>
+        <details name="ionod-faq"><summary>Vad är BASx?</summary><p>BASx är AI-stöd för BASTEC-system och finns som stängd alpha. Läs mer på <a href="https://ionod.se/basx/">BASx-sidan</a>.</p></details>
+      </section>
+      <section class="question-group" id="hjalp" aria-labelledby="hjalp-title"><h2 id="hjalp-title">Pris</h2>
+        <details name="ionod-faq"><summary>Vad kostar en lösning från IoNod?</summary><p>Priset beror på anläggningen och vad som behöver installeras. <a href="kontakt.html">Kontakta oss för ett prisförslag.</a></p></details>
+        
+      </section>
+    </div>
+    <aside class="wrap questions-contact"><div><h2>Fler frågor?</h2></div><a class="button button-orange" href="kontakt.html">Kontakta oss <span aria-hidden="true">→</span></a></aside>
+  </main>
+  <footer class="site-footer footer-project wrap" id="sidfot">
+    <div class="footer-identity">
+      <a class="logo" href="index.html" aria-label="ioNod, startsida"><img src="assets/ionod-logo.jpg" alt="ioNod" width="200" height="200"></a>
+      <p>ioNod</p>
+    </div>
+    <p class="footer-project-note">Webbplatsen är ett projekt utvecklat i samband med praktik. <a href="om-oss.html">Läs mer om oss</a>.</p>
+  </footer>
+</body>
+</html>

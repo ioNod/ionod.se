@@ -1,0 +1,21 @@
+/* Anpassning till webbplatsens telefonram. Simulatorns utseende och logik behålls. */
+html.demo{scrollbar-gutter:auto;scrollbar-width:thin;overscroll-behavior-y:contain}
+main{min-width:0}
+.credit img{width:18px;height:18px;object-fit:contain}
+.ionod-guide-highlight{outline:3px solid #f87845;outline-offset:3px;border-radius:10px;scroll-margin-block:12px}
+.ionod-guide-description{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.ionod-guided [data-ionod-guide-locked]{cursor:default}
+.ionod-guided [data-ionod-guide-locked]:not(#pumps-toggle),
+.ionod-guided #pumps-toggle[data-ionod-guide-locked]::after{opacity:.4}
+.pill,.settings-row .pill,.diagnostics-heading .pill,.map-link{min-height:44px}
+.setting-field input{min-height:44px}
+dialog{max-height:min(calc(100dvh - 24px),var(--ionod-dialog-max-height,100dvh));overflow-y:auto}
+@media(max-width:320px){
+  .hero{padding:10px}
+  .diagnostics{grid-template-columns:minmax(0,1fr)}
+  .diagnostics-heading{flex-wrap:wrap}
+  .pump-row{grid-template-columns:minmax(0,1fr) minmax(94px,44%)}
+  .pump-row strong{font-size:12px}
+  .pump-row .pill{padding-inline:6px}
+  .event{grid-template-columns:6.9em minmax(0,1fr)}
+}

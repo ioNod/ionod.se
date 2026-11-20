@@ -4,3 +4,5 @@ ionod-mobile-menu-check*.png
 old-*
 **/old-*
 .wrangler/
+/preview/deprecated/
+/preview/originals/

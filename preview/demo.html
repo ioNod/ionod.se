@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="sv" class="home-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <link rel="icon" type="image/jpeg" href="assets/ionod-logo.jpg">
+  <meta name="description" content="Prova IoNod Pumps app med simulerade pumpar, mätare, historik och inställningar. Ninis visar reglagen.">
+  <title>Appdemo — IoNod Pump</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="embedded-demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#innehall">Hoppa till innehållet</a>
+  <!-- Toppmenyn finns kvar vid scrollning. Sidvalen under introduktionen finns också kvar. -->
+  <header class="home-header">
+    <div class="site-header wrap">
+      <a class="logo" href="index.html" aria-label="IoNod, till startsidan"><img src="assets/ionod-logo.jpg" alt="IoNod" width="200" height="200"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span data-menu-label>Meny</span><span data-menu-icon aria-hidden="true">☰</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <a href="index.html">Startsida</a>
+        <a href="produkter.html">Produkter</a>
+        <a href="vattenpumpning.html">Borrad brunn</a>
+        <a href="om-oss.html">Om oss</a>
+        <a href="faq.html">Frågor &amp; svar</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a class="button button-small button-green nav-cta" href="demo.html" aria-current="page"><span class="nav-cta-label">Prova <small>en av våra appar</small></span><span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="innehall">
+    <section class="app-demo-section wrap" id="appdemo" aria-labelledby="app-demo-title">
+      <div class="app-demo-copy">
+        <p class="eyebrow">Appdemo</p>
+        <h1 id="app-demo-title">Prova <span class="muted-green">IoNod Pump.</span></h1>
+        
+        
+        <div class="pump-helper demo-guide-invitation">
+          <img src="assets/rabbit-mascot.png" alt="" width="512" height="512" loading="lazy">
+          <div>
+            <h3>Ninis visar appen</h3>
+            <p>Starta, ändra tryck och prova larm tillsammans med Ninis.</p>
+            <div class="demo-guide-actions">
+              <button class="button button-green" type="button" data-tour-start disabled aria-describedby="demo-load-status">Starta guiden</button>
+              <button class="button button-outline" type="button" data-demo-reset disabled aria-controls="superpump-demo" aria-describedby="demo-load-status">Nollställ appen</button>
+            </div>
+            <p class="sr-only" id="tour-result" role="status" hidden></p>
+          </div>
+        </div>
+        <p class="demo-load-status" id="demo-load-status" role="status">Appen laddas…</p>
+        <p class="demo-instruction" id="demo-instruction">Simulerad demo. Ingen riktig pump är ansluten.</p>
+      </div>
+      <div class="hero-art embedded-demo-art" aria-label="Interaktiv appdemo">
+        <div class="art-backdrop">
+          <div class="art-orbit orbit-one" aria-hidden="true"></div>
+          <div class="art-orbit orbit-two" aria-hidden="true"></div>
+          <img class="landscape-image" src="assets/demo-landskap-akvarell.jpg" alt="En damm, ett pumphus och grönska." width="1024" height="1024" loading="lazy">
+        </div>
+        <div class="connection-line" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="signal-beacon" aria-hidden="true"></span>
+        
+        <div class="floating-label landscape-label"><span class="location-icon" aria-hidden="true">⌖</span> Din plats <span class="label-line"></span> Uppkopplad</div>
+
+        <div class="demo-phone-viewport">
+          <div class="phone phone-embedded" aria-label="IoNod Pump, interaktiv appdemo" aria-describedby="demo-instruction">
+            <div class="phone-camera" aria-hidden="true"></div>
+            <div class="phone-status" aria-hidden="true">
+              <time class="phone-clock"></time>
+              <span><span class="phone-signal"><i></i><i></i><i></i><i></i></span><span class="battery"></span></span>
+            </div>
+            <!-- Update this srcdoc with python preview/generate-demo-frame.py from the repository root. -->
+            <iframe id="superpump-demo" class="phone-app-frame" title="IoNod Pump – Ljungmåla Borra, simulerad app" loading="eager" srcdoc="<!doctype html>
+<html class=&quot;demo&quot; lang=&quot;sv&quot;>
+<head>
+    <meta charset=&quot;utf-8&quot;>
+    <link rel=&quot;icon&quot; type=&quot;image/jpeg&quot; href=&quot;assets/ionod-logo.jpg&quot;>
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+    <title>Ljungmåla Borra (demo)</title>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/faux-superpump/style.css&quot;>
+    <link rel=&quot;stylesheet&quot; href=&quot;assets/faux-superpump/embedded.css&quot;>
+    <script defer src=&quot;assets/faux-superpump/simulator.js&quot;></script>
+</head>
+<body>
+    <main>
+        <header class=&quot;panel hero&quot;>
+            <h1>Ljungmåla Borra (demo)</h1>
+            <p class=&quot;credit&quot;><span id=&quot;credit&quot;></span> <img src=&quot;assets/faux-superpump/ionod-credit.png&quot; alt=&quot;IoNod&quot; width=&quot;18&quot; height=&quot;18&quot;> ioNod.se</p>
+
+            <section class=&quot;process fold-card&quot;>
+                <button id=&quot;pumps-toggle&quot; class=&quot;fold-toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;pumps-fold&quot;>
+                    <strong id=&quot;process-status&quot; class=&quot;process-status&quot;><span id=&quot;process-state&quot;></span><span id=&quot;process-pressure&quot;></span></strong>
+                    <span id=&quot;pumps&quot; class=&quot;pumps&quot;></span>
+                </button>
+                <div id=&quot;pumps-fold&quot; class=&quot;fold&quot; inert><div class=&quot;fold-clip&quot;><div id=&quot;pump-controls&quot; class=&quot;pump-controls&quot;></div></div></div>
+            </section>
+
+            <section class=&quot;events fold-card&quot;>
+                <button id=&quot;events-toggle&quot; class=&quot;fold-toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;events-fold&quot;>
+                    <strong id=&quot;events-title&quot; class=&quot;section-title&quot;></strong>
+                </button>
+                <ol id=&quot;event-preview&quot; class=&quot;event-list&quot;></ol>
+                <div id=&quot;events-fold&quot; class=&quot;fold&quot; inert><div class=&quot;fold-clip&quot;><ol id=&quot;event-list&quot; class=&quot;event-list&quot; start=&quot;3&quot;></ol></div></div>
+            </section>
+
+            <div class=&quot;control-panel&quot;>
+                <div id=&quot;commands&quot; class=&quot;commands&quot; inert>
+                    <button id=&quot;start&quot; class=&quot;command&quot; type=&quot;button&quot;><span class=&quot;sculpt&quot; aria-hidden=&quot;true&quot;></span><span id=&quot;start-label&quot;></span></button>
+                    <button id=&quot;stop&quot; class=&quot;command&quot; type=&quot;button&quot;><span class=&quot;sculpt&quot; aria-hidden=&quot;true&quot;></span><span id=&quot;stop-label&quot;></span></button>
+                    <button id=&quot;reset&quot; class=&quot;pill&quot; type=&quot;button&quot; hidden></button>
+                </div>
+                <div id=&quot;locked-controls&quot; class=&quot;locked-controls&quot;>
+                    <button id=&quot;unlock&quot; class=&quot;command&quot; type=&quot;button&quot; aria-controls=&quot;commands&quot; aria-expanded=&quot;false&quot;><span class=&quot;sculpt&quot; aria-hidden=&quot;true&quot;></span><span id=&quot;unlock-label&quot;></span></button>
+                </div>
+            </div>
+        </header>
+
+        <section id=&quot;gauges&quot; class=&quot;gauges&quot;></section>
+
+        <section class=&quot;panel history&quot; aria-labelledby=&quot;history-title&quot;>
+            <h2 id=&quot;history-title&quot; class=&quot;section-title&quot;></h2>
+            <div id=&quot;graph-box&quot; class=&quot;graph-box&quot;>
+                <ul id=&quot;graph-legend&quot; class=&quot;graph-legend&quot;></ul>
+                <canvas id=&quot;graph&quot; width=&quot;640&quot; height=&quot;216&quot; role=&quot;img&quot;></canvas>
+                <div class=&quot;graph-time&quot;><span id=&quot;graph-start&quot;></span><strong id=&quot;graph-readout&quot; hidden></strong><span id=&quot;graph-end&quot;></span></div>
+            </div>
+        </section>
+
+        <section class=&quot;panel settings fold-card&quot;>
+            <button id=&quot;settings-toggle&quot; class=&quot;fold-toggle&quot; type=&quot;button&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;settings-fold&quot;>
+                <strong id=&quot;settings-title&quot; class=&quot;section-title&quot;></strong>
+            </button>
+            <div class=&quot;settings-row pressure-setting&quot;>
+                <div><span id=&quot;setpoint-label&quot;></span> <strong id=&quot;setpoint&quot;></strong></div>
+                <button id=&quot;set-pressure&quot; class=&quot;pill&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot; aria-labelledby=&quot;configure-pressure setpoint-label&quot;><span id=&quot;configure-pressure&quot;></span></button>
+            </div>
+            <div id=&quot;settings-fold&quot; class=&quot;fold&quot; inert><div class=&quot;fold-clip&quot;>
+                <div class=&quot;settings-actions&quot;>
+                    <section class=&quot;alarm-group&quot;>
+                        <div class=&quot;settings-row&quot;>
+                            <h2 id=&quot;pressure-alarm-label&quot; class=&quot;section-title&quot;></h2>
+                            <button id=&quot;set-pressure-alarm&quot; class=&quot;pill&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot; aria-labelledby=&quot;configure-pressure-alarm pressure-alarm-label&quot;><span id=&quot;configure-pressure-alarm&quot;></span></button>
+                        </div>
+                        <dl id=&quot;pressure-alarm-readings&quot; class=&quot;alarm-readings&quot;></dl>
+                    </section>
+                    <section class=&quot;alarm-group&quot;>
+                        <div class=&quot;settings-row&quot;>
+                            <h2 id=&quot;flow-alarm-label&quot; class=&quot;section-title&quot;></h2>
+                            <button id=&quot;set-flow-alarm&quot; class=&quot;pill&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot; aria-labelledby=&quot;configure-flow-alarm flow-alarm-label&quot;><span id=&quot;configure-flow-alarm&quot;></span></button>
+                        </div>
+                        <dl id=&quot;flow-alarm-readings&quot; class=&quot;alarm-readings&quot;></dl>
+                    </section>
+                </div>
+            </div></div>
+        </section>
+
+        <section class=&quot;panel diagnostics-panel&quot;>
+            <div class=&quot;diagnostics-heading&quot;>
+                <h2 id=&quot;diagnostics-title&quot; class=&quot;section-title&quot;></h2>
+                <button id=&quot;report&quot; class=&quot;pill&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot;></button>
+            </div>
+            <dl class=&quot;diagnostics&quot;>
+                <div><dt id=&quot;energy-label&quot;></dt><dd id=&quot;energy&quot;></dd></div>
+                <div><dt id=&quot;volume-label&quot;></dt><dd id=&quot;volume&quot;></dd></div>
+                <div><dt id=&quot;updated-label&quot;></dt><dd><time id=&quot;updated&quot;></time></dd></div>
+                <div>
+                    <dt id=&quot;gps-label&quot;></dt>
+                    <dd><button id=&quot;gps&quot; class=&quot;map-link&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot;></button></dd>
+                </div>
+            </dl>
+            <button id=&quot;more&quot; class=&quot;pill accent&quot; type=&quot;button&quot; aria-haspopup=&quot;dialog&quot;></button>
+        </section>
+    </main>
+
+    <div id=&quot;toast&quot; class=&quot;toast&quot; role=&quot;status&quot; aria-atomic=&quot;true&quot;>
+        <img src=&quot;assets/faux-superpump/bell.png&quot; alt=&quot;&quot;>
+        <div><strong id=&quot;toast-label&quot;></strong><span id=&quot;toast-message&quot;></span></div>
+    </div>
+
+    <dialog id=&quot;unavailable&quot; aria-labelledby=&quot;unavailable-title&quot;>
+        <h2 id=&quot;unavailable-title&quot;></h2>
+        <ul id=&quot;unavailable-list&quot;></ul>
+        <form method=&quot;dialog&quot;><button id=&quot;close&quot; class=&quot;pill accent&quot; type=&quot;submit&quot; autofocus></button></form>
+    </dialog>
+
+    <dialog id=&quot;configuration&quot; aria-labelledby=&quot;configuration-title&quot;>
+        <h2 id=&quot;configuration-title&quot;></h2>
+        <form id=&quot;configuration-form&quot;>
+            <div id=&quot;configuration-fields&quot; class=&quot;configuration-fields&quot;></div>
+            <div class=&quot;configuration-actions&quot;>
+                <button id=&quot;cancel-configuration&quot; class=&quot;pill&quot; type=&quot;button&quot;></button>
+                <button id=&quot;save-configuration&quot; class=&quot;pill accent&quot; type=&quot;submit&quot;></button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>"></iframe>
+            <div class="phone-home" aria-hidden="true"></div>
+          </div>
+        </div>
+        <a class="demo-expand-link" href="assets/faux-superpump/demo.html" target="_blank" rel="noopener">Öppna appen separat</a>
+      </div>
+      <aside class="demo-tour-panel" id="demo-tour" aria-labelledby="tour-title" hidden>
+        <div class="tour-panel-heading"><img src="assets/rabbit-mascot.png" alt="" width="512" height="512" data-tour-mascot><div><p class="tour-counter" id="tour-counter">Steg 1 av 6</p><div class="tour-progress" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="tour-copy" aria-live="polite" aria-atomic="true"><h3 id="tour-title">Starta pumpen</h3><p id="tour-description">Tryck på Lås upp och sedan Start inom fyra sekunder.</p></div>
+        <div class="tour-controls"><button class="tour-back" type="button" data-tour-exit>Låt mig testa på egen hand</button><button class="button button-green" type="button" data-tour-next hidden>Prova själv</button></div>
+        
+      </aside>
+    </section>
+
+      <aside class="rabbit-note wrap" aria-label="Tips från IoNod">
+      <button class="rabbit-note-mascot has-pose pose-lying" type="button" aria-label="Hälsa på kaninen">
+        <img class="rabbit-pose" src="assets/rabbit-lying.png" alt="" width="512" height="512" loading="lazy">
+        <img class="rabbit-body" src="assets/rabbit-mascot.png" alt="" width="512" height="512" loading="lazy">
+        <img class="rabbit-ear rabbit-ear-left" src="assets/rabbit-mascot.png" alt="" aria-hidden="true" width="512" height="512" loading="lazy">
+        <img class="rabbit-ear rabbit-ear-right" src="assets/rabbit-mascot.png" alt="" aria-hidden="true" width="512" height="512" loading="lazy">
+        <span class="rabbit-eye rabbit-eye-left" aria-hidden="true"></span><span class="rabbit-eye rabbit-eye-right" aria-hidden="true"></span>
+      </button>
+      <div class="rabbit-note-box"><div><h2>Frågor om IoNod Pump?</h2></div><a class="button button-green" href="kontakt.html">Kontakta oss <span aria-hidden="true">→</span></a></div>
+    </aside>
+  </main>
+  <footer class="site-footer footer-project wrap" id="sidfot">
+    <div class="footer-identity">
+      <a class="logo" href="index.html" aria-label="ioNod, startsida"><img src="assets/ionod-logo.jpg" alt="ioNod" width="200" height="200"></a>
+      <p>ioNod</p>
+    </div>
+    <p class="footer-project-note">Webbplatsen är ett projekt utvecklat i samband med praktik. <a href="om-oss.html">Läs mer om oss</a>.</p>
+  </footer>
+  <div class="sr-only" id="demo-announcement" role="status" aria-live="polite"></div>
+</body>
+</html>
